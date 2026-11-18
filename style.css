@@ -11,3 +11,5 @@
 .account-bar span:first-child{flex:1 1 100%;min-width:0;overflow-wrap:anywhere;word-break:break-word}
 .account-bar #syncStatus{flex:1 1 100%;min-width:0;overflow-wrap:anywhere}
 .account-bar button{flex:0 0 auto}
+
+#mapContainer[hidden]{display:none!important}#toggleMap{font-size:0.9rem;white-space:nowrap}#map{touch-action:none}
