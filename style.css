@@ -5,3 +5,9 @@
 .map-options{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:8px 0;font-size:13px}.map-options label{display:flex;align-items:center;gap:6px}.map-options select{padding:8px;border:1px solid #c7d9e5;border-radius:8px;background:white;color:#124363}.map-options input{width:17px;height:17px}
 
 .record-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}.record-actions .view-record{color:#12547c;background:#e3f3ff;border-color:#b9d9ed}.record{align-items:center}.record>div:first-child{min-width:0;overflow-wrap:anywhere}@media(max-width:520px){.record{align-items:flex-start;flex-direction:column}.record-actions{width:100%;justify-content:flex-start}}
+
+/* v0.5.1: impedir que e-mail comprido comprima a barra no celular */
+.account-bar{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.account-bar span:first-child{flex:1 1 100%;min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.account-bar #syncStatus{flex:1 1 100%;min-width:0;overflow-wrap:anywhere}
+.account-bar button{flex:0 0 auto}
