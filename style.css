@@ -13,3 +13,5 @@
 .account-bar button{flex:0 0 auto}
 
 #mapContainer[hidden]{display:none!important}#toggleMap{font-size:0.9rem;white-space:nowrap}#map{touch-action:none}
+
+.install-share-bar{max-width:800px;margin:12px auto 0;padding:10px 12px;background:#fff;border-radius:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.install-share-bar button{flex:1 1 180px;min-height:46px}.install-share-bar .hint{flex-basis:100%;margin:0;color:#33556a;font-size:13px;overflow-wrap:anywhere}

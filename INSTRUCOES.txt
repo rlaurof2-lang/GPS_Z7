@@ -1,1 +1,7 @@
-GPS_Z7 v0.5.2: enviar index.html, app.js, style.css, manifest.webmanifest, share-gpsz7.png e pasta icons ao repositorio GitHub, preservando config.js, auth.js e todos os demais arquivos. O zoom depende da disponibilidade de mosaicos; visualizacao 1000x nao equivale a resolucao de imagem 1000x. Previa WhatsApp pode ficar em cache. Testar no celular apos publicar.
+GPS_Z7 v0.5.3 — INSTALAR E COMPARTILHAR
+
+No GitHub, envie index.html, style.css, install-share.js, share-gpsz7.png e a pasta icons (e demais arquivos da versao 0.5.2 se ainda nao publicados).
+NAO apague config.js, auth.js, app.js, sw.js nem outros arquivos existentes.
+A instalacao PWA depende de manifest.webmanifest, icons e sw.js existentes e acessiveis. O botao abre o prompt quando o navegador permite; caso contrario mostra instrucoes.
+Compartilhar usa o menu nativo do celular ou copia o link. A previa com logo depende do WhatsApp e do cache.
+Teste em https://rlaurof2-lang.github.io/GPS_Z7/ apos publicar.
