@@ -5,6 +5,8 @@ const queueKey=()=>`gpsz7.user.${userId}.queue.v3`;
 function getQueue(){try{return JSON.parse(localStorage.getItem(queueKey())||'{}')}catch{return {}}}
 function queueChange(id,action){const q=getQueue();q[id]=action;localStorage.setItem(queueKey(),JSON.stringify(q))}
 function syncLabel(msg){$('syncStatus').textContent=msg}
+window.addEventListener('offline',()=>syncLabel('Offline • dados salvos no aparelho'));
+window.addEventListener('online',()=>syncLabel('Online • preparando sincronização')); 
 async function syncRecords(){if(!userId||syncBusy||!navigator.onLine)return;const uid=userId;syncBusy=true;syncLabel('Sincronizando...');try{
  const db=window.GPS_Z7_AUTH.db;let queue=getQueue();
  for(const [id,action] of Object.entries(queue)){
@@ -97,7 +99,7 @@ const xy=p=>{const v=merc(p[1],p[0],zoom);return[(v.x*256-left),(v.y*256-top)]};
 $('mapLayer').onchange=e=>{mapLayer=e.target.value;$('mapnote').textContent=mapLayer==='satellite'?'Imagens: Esri World Imagery e provedores parceiros. Necessita internet.':'Mapa: © OpenStreetMap contributors. Necessita internet.';render()};$('followGPS').onchange=e=>{followGPS=e.target.checked;if(followGPS&&current)center={lat:current.lat,lon:current.lon};render()};
 $('zoomin').onclick=()=>{zoom=Math.min(22,zoom+1);render()};$('zoomout').onclick=()=>{zoom=Math.max(2,zoom-1);render()};$('center').onclick=()=>{if(current)center={lat:current.lat,lon:current.lon};else alert('Ative o GPS para centralizar.');render()};
 canvas.addEventListener('pointerdown',e=>{followGPS=false;$('followGPS').checked=false;pan={x:e.clientX,y:e.clientY,c:{...center}};canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(!pan)return;const m=merc(pan.c.lat,pan.c.lon,zoom),p=inverse(m.x-(e.clientX-pan.x)/256,m.y-(e.clientY-pan.y)/256,zoom);center={lat:Math.max(-85,Math.min(85,p.lat)),lon:p.lon};render()});canvas.addEventListener('pointerup',()=>pan=null);canvas.addEventListener('pointercancel',()=>pan=null);window.addEventListener('resize',render);
-renderRecords();render();if('serviceWorker'in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
+renderRecords();render();if('serviceWorker'in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js?v=54').catch(()=>{});
 
 // GPS_Z7 v0.5.2: ocultar mapa sem desativar levantamentos.
 const toggleMapBtn=document.getElementById('toggleMap');

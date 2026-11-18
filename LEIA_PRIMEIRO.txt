@@ -1,0 +1,12 @@
+GPS_Z7 v0.5.4 - Modo Campo Offline
+
+1. Faça backup do repositório e dos levantamentos (CSV/KML).
+2. Envie os arquivos deste pacote para a RAIZ do repositório GPS_Z7, mantendo a pasta icons.
+3. NÃO substitua nem apague o config.js que já funciona no GitHub. Ele não acompanha o pacote para proteger sua configuração.
+4. Abra o aplicativo COM INTERNET, faça login e espere carregar.
+5. Instale pelo navegador e teste em modo avião: feche e reabra o aplicativo, registre ponto e trilha.
+6. Volte a conectar e toque em Sincronizar.
+
+Limites: mapas de ruas/satélite exigem rede, exceto mosaicos já em cache do navegador. A coleta de GPS em segundo plano/tela bloqueada não é garantida pelo navegador. Sessão offline somente após login validado online neste aparelho; sair da conta desativa acesso offline.
+
+Observação: para garantir armazenamento offline robusto, mantenha espaço livre no dispositivo e exporte backups regularmente.
