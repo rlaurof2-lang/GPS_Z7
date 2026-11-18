@@ -1,0 +1,1 @@
+GPS_Z7 v0.5.2: enviar index.html, app.js, style.css, manifest.webmanifest, share-gpsz7.png e pasta icons ao repositorio GitHub, preservando config.js, auth.js e todos os demais arquivos. O zoom depende da disponibilidade de mosaicos; visualizacao 1000x nao equivale a resolucao de imagem 1000x. Previa WhatsApp pode ficar em cache. Testar no celular apos publicar.
